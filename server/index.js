@@ -1,7 +1,7 @@
 const express = require("express");
 const {} = require("./authController");
 const {} = require("./matchController");
-const {} = require("profileController");
+const {} = require("./profileController");
 
 const app = express();
 
