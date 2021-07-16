@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./index.css";
+import "./styles/style.css";
 
 class App extends Component {
   constructor() {
@@ -10,8 +10,14 @@ class App extends Component {
   render() {
     return (
       <main>
-        <div className="left">
+        <header>
           <h1>PlayDate</h1>
+          <h3>Already a Guest?</h3>
+          <button>Login</button>
+          <h3>New Kid on the Block?</h3>
+          <button>Create Account</button>
+        </header>
+        <div className="left">
           <p>
             Are you single parenting like a boss, but interested in adding the
             chaos of dating to your already exhausting life? Sure, there are
@@ -28,10 +34,6 @@ class App extends Component {
           </p>
         </div>
         <div className="right">
-          <h3>Already a Guest?</h3>
-          <button>Login</button>
-          <h3>New Kid on the Block?</h3>
-          <button>Create Account</button>
           <img
             src="https://media.gettyimages.com/photos/couple-relaxing-on-sofa-while-moving-house-picture-id532097877?s=170667a"
             alt="exhausted pic"

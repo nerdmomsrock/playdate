@@ -1,0 +1,28 @@
+main {
+  background-color: mintcream;
+  height: 100vh;
+}
+
+header {
+  height: 20vh;
+  background-color: hotpink;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header h1 {
+  font-size: 100px;
+  font-family: cambria;
+}
+
+header h3 {
+  font-size: 35px;
+  font-family: sans-serif;
+}
+/*# sourceMappingURL=style.css.map */
