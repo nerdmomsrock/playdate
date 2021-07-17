@@ -1,3 +1,7 @@
+require("dotenv").config();
+const massive = require("massive");
+const { SERVER_PORT, CONNECTION_STRING } = process.env;
+
 const express = require("express");
 const {} = require("./authController");
 const {} = require("./matchController");
@@ -5,7 +9,18 @@ const {} = require("./profileController");
 
 const app = express();
 
-const PORT = 5050;
+massive({
+  connectionString: CONNECTION_STRING,
+  ssl: { rejectUnauthorized: false },
+})
+  .then((db) => {
+    console.log("Database Connected");
+    app.set("db", db);
+    app.listen(SERVER_PORT, () =>
+      console.log(`Server running on Port ${SERVER_PORT}`)
+    );
+  })
+  .catch((err) => console.log(err));
 
 app.use(express.json());
 
@@ -20,5 +35,3 @@ app.put("/api/profile", editProfile);
 app.put("/api/matches/:id", rejectMatch);
 
 app.delete("/api/account/:id", deleteAccount);
-
-app.listen(PORT, () => console.log(`Kicking butt on Port ${PORT}!`));
