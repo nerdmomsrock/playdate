@@ -1,8 +1,8 @@
 require("dotenv").config();
+
 const massive = require("massive");
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const session = "express-session";
-authCtrl = require("./Controller/authCtrl");
 
 const express = require("express");
 
@@ -53,3 +53,7 @@ app.put("/api/profile", editProfile);
 app.put("/api/matches/:id", rejectMatch);
 
 app.delete("/api/account/:id", deleteAccount);
+
+app.listen(SERVER_PORT, () =>
+  console.log(`Server running on Port ${SERVER_PORT}`)
+);
