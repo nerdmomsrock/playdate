@@ -8,4 +8,4 @@ function Bios() {
   );
 }
 
-export default Bio;
+export default Bios;

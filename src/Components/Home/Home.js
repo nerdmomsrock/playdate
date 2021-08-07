@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
   return (
     <div className="Home">
-      <h1>PlayDate Home</h1>
+      <h1>Welcome To PlayDate!</h1>
       <div className="left">
         <p>
           Are you single parenting like a boss, but interested in adding the
