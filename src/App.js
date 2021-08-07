@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import Nav from "./Nav";
+import Login from "./Login/Login";
+import Account from "./Account/Account";
+import Bios from "./Bios/Bios";
+import Matches from "./Matches/Matches";
+import Home from "./Home/Home";
 import { HashRouter, Link } from "react-router-dom";
 //import routes from './routes';
 
-import "./styles/style.css";
+import "./styles/app.css";
 
 class App extends Component {
   constructor() {
