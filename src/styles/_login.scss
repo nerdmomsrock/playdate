@@ -1,0 +1,42 @@
+@mixin fields {
+  width: 300px;
+  height: 30px;
+  font-family: cursive;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 10px;
+  letter-spacing: 1px;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.Login {
+  h1 {
+    letter-spacing: 3px;
+    font-size: 60px;
+  }
+  .user {
+    font-family: cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .field {
+    @include fields();
+  }
+  .submit {
+    width: 150px;
+    height: 30px;
+    font-family: cursive;
+    letter-spacing: 2px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: lightgray;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+}

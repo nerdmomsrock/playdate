@@ -1,0 +1,37 @@
+@mixin navLinks {
+  color: white;
+  font-size: 20px;
+  font-family: cursive;
+  text-decoration: none;
+}
+
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 15vh;
+  background: black;
+  color: rgb(91, 9, 9);
+
+  h1 {
+    letter-spacing: 6px;
+    font-size: 60px;
+    text-shadow: 2px 2px 4px white;
+  }
+
+  .nav-links {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+  }
+
+  .link {
+    @include navLinks();
+
+    &:hover {
+      color: darkred;
+    }
+  }
+}

@@ -1,8 +1,19 @@
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+@import "./styles/nav";
+@import "./styles/variables";
+@import "./styles/home";
+@import "./styles/login";
+
+// *, * :: after, *: : before {
+//   box-sizing: border-box;
+// }
+
+@mixin h1 {
+  font-size: 50px;
+  margin-top: 10px;
+  padding: 20px;
+  font-family: cursive;
 }
+
 html,
 body {
   height: 100%;
@@ -15,47 +26,18 @@ main {
   width: 100vw;
   height: 100vh;
 }
+
 .App {
   text-align: center;
 }
 
-.Nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 15vh;
-  background: rgb(70, 91, 91);
-  color: white;
-}
-
-.nav-links {
-  width: 40%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-}
-
 .Home {
   height: 100vh;
-  background: rgb(193, 99, 193);
+  background: slategray;
   color: white;
   margin-top: -1.3%;
 }
 
-.link {
-  color: white;
-  font-size: 20px;
-  font-family: cursive;
-}
-
-.link:hover {
-  color: rgb(130, 228, 228);
-}
-
 h1 {
-  font-size: 50px;
-  margin-top: 10px;
-  padding: 20px;
-  font-family: cursive;
+  @include h1();
 }
