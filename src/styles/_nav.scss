@@ -1,4 +1,4 @@
-@mixin navLinks {
+@mixin Links {
   color: white;
   font-size: 20px;
   font-family: cursive;
@@ -28,7 +28,7 @@
   }
 
   .link {
-    @include navLinks();
+    @include Links();
 
     &:hover {
       color: darkred;
