@@ -6,9 +6,25 @@
   background-color: lightgray;
   border-radius: 10px;
   letter-spacing: 1px;
+  box-shadow: 3px 3px 6px black;
 
   &:hover {
     background-color: white;
+  }
+}
+
+@mixin submit {
+  width: 150px;
+  height: 30px;
+  font-family: cursive;
+  letter-spacing: 2px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: lightgray;
+  box-shadow: 2px 2px 5px black;
+
+  &:hover {
+    color: darkred;
   }
 }
 
@@ -25,20 +41,15 @@
 
   .field {
     @include fields();
-    box-shadow: 3px 3px 6px black;
   }
   .submit {
-    width: 150px;
-    height: 30px;
-    font-family: cursive;
-    letter-spacing: 2px;
-    font-size: 15px;
-    border-radius: 10px;
-    background-color: lightgray;
-    box-shadow: 2px 2px 5px black;
+    @include submit();
+  }
 
+  .delete {
+    @include submit();
     &:hover {
-      color: darkred;
+      background-color: black;
     }
   }
 }

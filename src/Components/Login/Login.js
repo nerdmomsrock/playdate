@@ -7,7 +7,6 @@ function Login() {
       <h1>Login Here:</h1>
       <div>
         <br />
-        <br />
         <div className="user">
           Username
           <br />
@@ -23,6 +22,9 @@ function Login() {
         <br />
         <br />
         <button className="submit">Submit</button>
+        <br />
+        <br />
+        <br />
       </div>
     </div>
   );

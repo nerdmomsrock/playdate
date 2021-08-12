@@ -1,0 +1,41 @@
+.Account {
+  h1 {
+    letter-spacing: 3px;
+    font-size: 60px;
+  }
+
+  h3 {
+    font-family: cursive;
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+
+  .field {
+    @include fields();
+  }
+
+  .submitReg {
+    @include submit();
+  }
+
+  .deleteReg {
+    @include submit();
+    width: 250px;
+    &:hover {
+      background-color: black;
+    }
+  }
+
+  .fieldMoment {
+    @include fields();
+    width: 600px;
+    height: 300px;
+  }
+
+  .selfie {
+    height: 500px;
+    width: 500px;
+    border: 2px black;
+    border-radius: 10px;
+  }
+}
