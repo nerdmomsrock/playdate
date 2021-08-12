@@ -65,6 +65,9 @@ function Account() {
           <br />
         </div>
         <div className="buttons">
+          <br />
+          <br />
+          <br />
           <button className="submitReg">Submit</button>
           <br />
           <br />
