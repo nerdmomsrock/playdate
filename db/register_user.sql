@@ -7,4 +7,4 @@ VALUES (
     ${hash}
 )
 
-returning user_id, email;
+return user_id, email;

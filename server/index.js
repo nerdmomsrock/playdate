@@ -2,19 +2,14 @@ require("dotenv").config();
 
 const massive = require("massive");
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
-const session = "express-session";
+const session = require("express-session");
 
 const express = require("express");
 
-const {} = require("./Controller/matchController");
+//const {} = require("./Controller/matchController");
 
 const app = express();
 app.use(express.json());
-
-const authCtrl = require("./Controller/authCtrl");
-app.post("/api/register", authCtrl.register);
-app.post("/api/login", authCtrl.login);
-app.get("/api/logout", authCtrl.logout);
 
 //get all profiles endpoint
 const profileCtrl = require("./Controller/profileCtrl");
@@ -42,18 +37,19 @@ app.use(
   })
 );
 
-app.get("/api/matches/:id", getMatches);
+const authCtrl = require("./Controller/authCtrl");
+app.post("/api/register", authCtrl.register);
+app.post("/api/login", authCtrl.login);
+app.get("/api/logout", authCtrl.logout);
 
-app.get("/api/login", userLogin);
+// app.get("/api/login", userLogin);
 
-app.post("/api/create", createAccount);
+// app.post("/api/create", createAccount);
 
-app.put("/api/profile", editProfile);
+// app.put("/api/profile", editProfile);
 
-app.put("/api/matches/:id", rejectMatch);
+// app.put("/api/matches/:id", rejectMatch);
 
-app.delete("/api/account/:id", deleteAccount);
+// app.delete("/api/account/:id", deleteAccount);
 
-app.listen(SERVER_PORT, () =>
-  console.log(`Server running on Port ${SERVER_PORT}`)
-);
+// app.get("/api/matches/:id", getMatches);
