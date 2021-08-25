@@ -1,19 +1,25 @@
 require("dotenv").config();
-
+const express = require("express");
 const massive = require("massive");
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const session = require("express-session");
 
-const express = require("express");
-
-//const {} = require("./Controller/matchController");
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const authCtrl = require("./Controller/authCtrl");
 
 const app = express();
+
 app.use(express.json());
 
-//get all profiles endpoint
-const profileCtrl = require("./Controller/profileCtrl");
-app.get("/api/profiles", profileCtrl.getAllProfiles);
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: true,
+    secret: SESSION_SECRET,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 365 },
+  })
+);
+
+//const {} = require("./Controller/matchController");
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -28,19 +34,18 @@ massive({
   })
   .catch((err) => console.log(err));
 
-app.use(
-  session({
-    resave: false,
-    saveUninitialized: true,
-    secret: SESSION_SECRET,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 * 365 },
-  })
-);
+//auth endpoints
 
-const authCtrl = require("./Controller/authCtrl");
 app.post("/api/register", authCtrl.register);
 app.post("/api/login", authCtrl.login);
-app.get("/api/logout", authCtrl.logout);
+app.delete("/api/logout", authCtrl.logout);
+
+//const matchCtrl = require("./Controller/matchCtrl");
+//app.get("/api/getMatches", matchCtrl.getMatches);
+
+const profileCtrl = require("./Controller/profileCtrl");
+//app.put("/api/profile", profileCtrl.edit);
+app.get("/api/profiles", profileCtrl.getAllProfiles);
 
 // app.get("/api/login", userLogin);
 

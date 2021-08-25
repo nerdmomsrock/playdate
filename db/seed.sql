@@ -5,7 +5,8 @@ CREATE TABLE users (
     email VARCHAR(100),
     password VARCHAR(250),
     first_name VARCHAR(50),
-    number_of_kids INTEGER,
+   your_kids INTEGER,
+   their_kids INTEGER,
     favorite_food VARCHAR(250),
     embarrassing_moment VARCHAR(500),
     gender VARCHAR(25),
@@ -18,8 +19,8 @@ DROP TABLE IF EXISTS preferences;
 CREATE TABLE preferences (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(user_id),
-    number_of_kids_preferred INTEGER,
-    gender_preferred VARCHAR(25),
+    their_kids INTEGER,
+    gender_preferred VARCHAR(25)
 )
 
 DROP TABLE IF EXISTS matches; 
