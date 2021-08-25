@@ -12,7 +12,4 @@ module.exports = {
         return;
       });
   },
-  deleteProfile: (req, res) => {
-    const db = req.app.delete("db");
-  },
 };

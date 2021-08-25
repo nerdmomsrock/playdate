@@ -1,10 +1,17 @@
-INSERT INTO users (
-    email,
-    password
-)
-VALUES (
-    ${email},
-    ${hash}
-)
+INSERT INTO users 
+( email, hash, first_name, your_kids, their_kids, favorite_food, embarrassing_moment, gender, photo);
+VALUES
+(
+${email},
+${hash}
+${first_name},
+${your_kids},
+${their_kids},
+${favorite_food},
+${embarrassing_moment},
+${gender},
+${photo});
 
-return user_id, email;
+returning  *
+
+
