@@ -2,12 +2,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { loginUser } from "../../ducks/reducer";
-
-// import React from 'react';
-// import {connect} from "react-redux";
-// import {loginUser} from "../../ducks/reducer";
-// import axios from 'axios';
+import { loginUser } from "../../ducks/userReducer";
 
 // const Login = props => {
 //   const login = (e) => {
@@ -125,6 +120,10 @@ class Login extends Component {
   }
 }
 
-//const mapDispatchToProps = (reduxState) => reduxState;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
 
-export default connect(null, { loginUser })(Login);
+export default connect(mapStateToProps, { loginUser })(Login);

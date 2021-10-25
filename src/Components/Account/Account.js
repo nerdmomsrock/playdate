@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { registerUser } from "../../ducks/reducer";
+import { registerUser } from "../../ducks/userReducer";
 
 import axios from "axios";
 
@@ -197,6 +197,10 @@ class Account extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
 
 export default connect(mapStateToProps, { registerUser })(Account);
