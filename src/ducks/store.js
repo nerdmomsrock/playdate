@@ -1,4 +1,10 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import reducer from "./reducer";
+import { createStore, combineReducers } from "redux";
+import userReducer from "./userReducer";
+import matchReducer from "./matchReducer";
 
-export default createStore(reducer);
+const rootReducer = combineReducers({
+  user: userReducer,
+  matches: matchReducer,
+});
+
+export default createStore(rootReducer);

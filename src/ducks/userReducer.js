@@ -34,7 +34,7 @@ export function loginUser(email) {
 //   };
 // }
 
-export default function reducer(state = initialState, action) {
+export default function userReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {

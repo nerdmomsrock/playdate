@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { userMatches } from "../../ducks/matchReducer";
 
 function Matches() {
   return (
@@ -8,4 +10,9 @@ function Matches() {
   );
 }
 
-export default Matches;
+const mapStateToProps = (state) => {
+  return {
+    matches: state.matches,
+  };
+};
+export default connect(mapStateToProps, { userMatches })(Matches);
