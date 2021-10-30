@@ -23,7 +23,7 @@ CREATE TABLE preferences (
     gender_preferred VARCHAR(25)
 )
 
-DROP TABLE IF EXISTS matches; 
+DROP TABLE IF EXISTS matches;
 
 CREATE TABLE matches (
     id SERIAL PRIMARY KEY,
@@ -33,3 +33,4 @@ CREATE TABLE matches (
 
 
 
+-- I created users and preferences in your DB.  I didn't see them in there
