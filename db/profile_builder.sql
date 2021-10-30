@@ -1,11 +1,11 @@
 
 
 INSERT INTO preferences 
-(id, number_of_kids_preferred, gender_preferred)
+(user_id, number_of_kids_preferred, gender_preferred)
 VALUES
-(${id},
-
+(
+${user_id},
 ${number_of_kids_preferred},
 ${gender_preferred})
 
-returning id, number_of_kids_preferred, gender_preferred;
+returning user_id, number_of_kids_preferred, gender_preferred;

@@ -2,7 +2,8 @@ const initialState = {
   email: "",
   password: "",
   first_name: "",
-  number_of_kids: "",
+  your_kids: "",
+  their_kids: "",
   favorite_food: "",
   embarrassing_moment: "",
   gender: "",
@@ -39,11 +40,34 @@ export default function userReducer(state = initialState, action) {
 
   switch (type) {
     case REGISTER_USER:
-      return { ...state, user: payload };
-    case LOGIN_USER:
-      return { ...state, user: payload };
-    // case CLEAR_USER:
+      const {
+        email,
+        password,
+        first_name,
+        our_kids,
+        their_kids,
+        favorite_food,
+        embarrassing_moment,
+        gender,
+        photo,
+      } = payload;
+      return {
+        ...state,
+        email,
+        password,
+        first_name,
+        our_kids,
+        their_kids,
+        favorite_food,
+        embarrassing_moment,
+        gender,
+        photo,
+      };
+    //return { ...state, user: payload };
+    // case LOGIN_USER:
     //   return { ...state, user: payload };
+    // // case CLEAR_USER:
+    // //   return { ...state, user: payload };
     default:
       return state;
   }

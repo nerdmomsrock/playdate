@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 //import "./App.css"; //comment
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-function Nav() {
+function Nav(props) {
+  console.log(props, "this is props");
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = () => setMenuOpen(!menuOpen);
@@ -15,12 +17,16 @@ function Nav() {
         <Link to="/home" className="link">
           <li>Home</li>
         </Link>
-        <Link to="/account" className="link">
-          <li>Create Account</li>
-        </Link>
-        <Link to="/login" className="link">
-          <li>Login</li>
-        </Link>
+        {props.user.email.length > 0 ? null : (
+          <Link to="/account" className="link">
+            <li>Create Account</li>
+          </Link>
+        )}
+        {props.user.email.length > 0 ? null : (
+          <Link to="/login" className="link">
+            <li>Login</li>
+          </Link>
+        )}
         <Link to="/bios" className="link">
           <li>Bios</li>
         </Link>
@@ -59,4 +65,10 @@ function Nav() {
   );
 }
 
-export default Nav;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapStateToProps)(Nav);
