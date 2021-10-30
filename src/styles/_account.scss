@@ -42,4 +42,18 @@
     border-radius: 15px;
     box-shadow: 4px 4px 8px black;
   }
+
+  @media (max-width: 400px) {
+    h3 {
+      font-size: 20px;
+    }
+    .fieldMoment {
+      width: 300px;
+      height: 150px;
+    }
+    .selfie {
+      width: 50%;
+      height: 250px;
+    }
+  }
 }

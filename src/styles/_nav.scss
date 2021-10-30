@@ -34,4 +34,73 @@
       color: darkred;
     }
   }
+
+  .menuButton {
+    display: none;
+    background: rgb(91, 9, 9);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .menuButton:hover {
+    background-color: white;
+  }
+
+  .hamburger {
+    background-color: white;
+    height: 35px;
+    width: 32px;
+    //display: none;
+  }
+
+  menu {
+    width: 80vw;
+    height: 0px;
+    background: rgb(35, 36, 36);
+    position: fixed;
+    transition-property: height;
+    transition-duration: 1s;
+  }
+
+  .menu-open {
+    height: 25vh;
+  }
+
+  .menuLinks {
+    margin-top: 35px;
+    list-style: none;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1025px) {
+    background-color: black;
+    .hamburger {
+      display: block;
+    }
+    .nav-links {
+      display: none;
+    }
+    .menuLinks {
+      padding: 80px;
+    }
+  }
+  @media (max-width: 1025px) {
+    .menuButton {
+      display: block;
+    }
+  }
+
+  @media (max-width: 400px) {
+    background-color: black;
+    .hamburger {
+      display: block;
+    }
+    .nav-links {
+      display: none;
+    }
+    .menuLinks {
+      padding: 2px;
+    }
+  }
 }

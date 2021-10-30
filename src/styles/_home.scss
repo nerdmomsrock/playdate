@@ -32,8 +32,8 @@ main {
 .intro {
   display: flex;
   font-size: 31px;
-  width: 80vh;
-  height: 30vh;
+  width: 50vw;
+  height: 45vh;
   float: left;
   margin-left: 40px;
   font-family: cursive;
@@ -46,8 +46,8 @@ h1 {
 }
 
 .homePic {
-  height: 600px;
-  width: 800px;
+  height: 55vh;
+  width: 40vw;
   margin-top: 40px;
   border: 1px solid black;
   border-radius: 15px;
@@ -58,4 +58,46 @@ h3 {
   font-size: 50px;
   font-family: cursive;
   letter-spacing: 2px;
+}
+@media (max-width: 1025px) {
+  .left {
+    display: block;
+    position: relative;
+    align-items: center;
+  }
+  .intro {
+    font-size: 25px;
+    display: block;
+  }
+
+  .homePic {
+    width: 30vw;
+    height: 25vh;
+  }
+  .right {
+    display: block;
+    position: relative;
+    align-items: center;
+  }
+  h3 {
+    display: block;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .right {
+    display: none;
+  }
+  .intro {
+    width: 80vw;
+    display: block;
+    font-size: 12px;
+    justify-content: center;
+  }
+  h3 {
+    display: block;
+    font-size: 20px;
+    margin-top: 45px;
+  }
 }
