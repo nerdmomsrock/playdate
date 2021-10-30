@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 //import "./App.css"; //comment
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
     <div className="Nav">
       <h1>#PlayDate</h1>
       <ul className="nav-links">
-        <Link to="/home" className="link">
+        <Link to="/" className="link">
           <li>Home</li>
         </Link>
         <Link to="/account" className="link">

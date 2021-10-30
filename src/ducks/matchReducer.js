@@ -1,8 +1,10 @@
+// I think this one is fine.
+
 const initialState = {
   matches: [],
 };
 
-const USER_MATCHES = "USER_MATCHES";
+const USER_MATCHES = 'USER_MATCHES';
 
 export function userMatches(matchArr) {
   return {

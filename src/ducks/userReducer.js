@@ -1,17 +1,19 @@
+// I personally wouldn't want to store login info in the store becauses this persists.  We can talk about what else we can store here.  I normall would store everything but the password.  And handle the registering and login in on the actual component.s
+
 const initialState = {
-  email: "",
-  password: "",
-  first_name: "",
-  number_of_kids: "",
-  favorite_food: "",
-  embarrassing_moment: "",
-  gender: "",
-  photo: "",
+  email: '',
+  password: '',
+  first_name: '',
+  number_of_kids: '',
+  favorite_food: '',
+  embarrassing_moment: '',
+  gender: '',
+  photo: '',
 };
 
-const REGISTER_USER = "REGISTER_USER";
-const LOGIN_USER = "LOGIN_USER";
-const CLEAR_USER = "CLEAR_USER";
+const REGISTER_USER = 'REGISTER_USER';
+const LOGIN_USER = 'LOGIN_USER';
+const CLEAR_USER = 'CLEAR_USER';
 
 export function registerUser(userObj) {
   return {
