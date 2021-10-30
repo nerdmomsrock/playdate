@@ -19,8 +19,6 @@ function Bios(props) {
     // setMatches or setBios([...props.matches])
   }, []);
 
-  console.log(test);
-
   return (
     <div className="Bios">
       <h1>Bios</h1>
