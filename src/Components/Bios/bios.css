@@ -1,0 +1,22 @@
+.box {
+  display: flex;
+  width: 90vw;
+}
+
+.card {
+  display: flex;
+  border: black 3px solid;
+  border-radius: 10px;
+  margin: 10px;
+  width: 400px;
+  height: 300px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}

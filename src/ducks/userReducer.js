@@ -1,18 +1,18 @@
 const initialState = {
-  email: "",
-  password: "",
-  first_name: "",
-  your_kids: "",
-  their_kids: "",
-  favorite_food: "",
-  embarrassing_moment: "",
-  gender: "",
-  photo: "",
+  email: '',
+  password: '',
+  first_name: '',
+  your_kids: '',
+  their_kids: '',
+  favorite_food: '',
+  embarrassing_moment: '',
+  gender: '',
+  photo: '',
 };
 
-const REGISTER_USER = "REGISTER_USER";
-const LOGIN_USER = "LOGIN_USER";
-const CLEAR_USER = "CLEAR_USER";
+const REGISTER_USER = 'REGISTER_USER';
+const LOGIN_USER = 'LOGIN_USER';
+const CLEAR_USER = 'CLEAR_USER';
 
 export function registerUser(userObj) {
   return {
