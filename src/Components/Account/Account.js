@@ -43,6 +43,7 @@ function Account(props) {
         photo,
       })
       .then((res) => {
+        console.log(res.data);
         props.registerUser(res.data);
 
         props.history.push('/Bios');

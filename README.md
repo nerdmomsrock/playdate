@@ -3,6 +3,7 @@
 - why aren't your App.scss and index.scss files in your styles folder?
 - What were your plans for Auth.js (component)
 - Uploading a photo is a nice touch. I can show you how to do it or storing a URL might be easier.
+- Creating accounts works
 
 # Getting Started with Create React App
 

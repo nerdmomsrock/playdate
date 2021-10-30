@@ -4,7 +4,9 @@ const initialState = {
   email: '',
   password: '',
   first_name: '',
-  number_of_kids: '',
+  // number_of_kids: '',  Nathan - I'm not sure where this is coming from since most kid things are labeled your_kids and their_kids
+  your_kids: 0,
+  their_kids: 0,
   favorite_food: '',
   embarrassing_moment: '',
   gender: '',
@@ -41,9 +43,34 @@ export default function userReducer(state = initialState, action) {
 
   switch (type) {
     case REGISTER_USER:
-      return { ...state, user: payload };
-    case LOGIN_USER:
-      return { ...state, user: payload };
+      const {
+        email,
+        password,
+        first_name,
+        your_kids,
+        their_kids,
+        favorite_food,
+        embarrassing_moment,
+        gender,
+        photo,
+      } = payload;
+      // return { ...state, user: payload };  Nathan - the way this is currently written, you are creating a copy of initialState and then a new key called user (so you have {user{initialState, user{}}})
+      return {
+        ...state,
+        email,
+        password,
+        first_name,
+        your_kids,
+        their_kids,
+        favorite_food,
+        embarrassing_moment,
+        gender,
+        photo,
+      };
+
+    // case LOGIN_USER:
+    //   // return { ...state, user: payload }; Nathan - you probably don't need this since REGISTER_USER performs the same function
+
     // case CLEAR_USER:
     //   return { ...state, user: payload };
     default:
