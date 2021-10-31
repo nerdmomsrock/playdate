@@ -1,9 +1,9 @@
-const bcrypt = require('bcryptjs');
-const { isCompositeComponent } = require('react-dom/test-utils');
+const bcrypt = require("bcryptjs");
+const { isCompositeComponent } = require("react-dom/test-utils");
 
 //module.exports = {
 const register = async (req, res) => {
-  const db = req.app.get('db');
+  const db = req.app.get("db");
   const {
     email,
     password,
@@ -19,10 +19,10 @@ const register = async (req, res) => {
 
   const existingUser = await db
     .check_user({ email })
-    .catch((err) => console.log(err, 'error'));
+    .catch((err) => console.log(err, "error"));
 
   if (existingUser[0]) {
-    return res.status(400).send('User already exists with that email');
+    return res.status(400).send("User already exists with that email");
   }
 
   let salt = bcrypt.genSaltSync(5);
@@ -40,9 +40,9 @@ const register = async (req, res) => {
       gender,
       photo,
     })
-    .catch((err) => console.log(err, 'Registration error'));
+    .catch((err) => console.log(err, "Registration error"));
 
-  console.log(newUser, 'new user login');
+  console.log(newUser, "new user login");
 
   // await db.profile_builder({
   //   user_id,
@@ -64,22 +64,22 @@ const register = async (req, res) => {
 // }
 
 const login = async (req, res) => {
-  const db = req.app.get('db');
+  const db = req.app.get("db");
   const { email, password } = req.body;
 
   const existingUser = await db.check_user({ email });
   if (!existingUser[0]) {
-    return res.status(404).send('User not found');
+    return res.status(404).send("User not found");
   }
 
-  console.log(existingUser, 'I am the existing user');
+  console.log(existingUser, "I am the existing user");
 
   const isAuthenticated = bcrypt.compareSync(
     password,
     existingUser[0].password
   );
   if (!isAuthenticated) {
-    return res.status(401).send('Password is incorrect');
+    return res.status(401).send("Password is incorrect");
   }
 
   delete existingUser[0].password;

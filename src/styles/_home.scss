@@ -59,6 +59,22 @@ h3 {
   font-family: cursive;
   letter-spacing: 2px;
 }
+
+.homeBtn {
+  width: 200px;
+  height: 30px;
+  font-family: cursive;
+  letter-spacing: 2px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: lightgray;
+  box-shadow: 2px 2px 5px black;
+
+  &:hover {
+    color: darkred;
+  }
+}
+
 @media (max-width: 1025px) {
   .left {
     display: block;

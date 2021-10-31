@@ -1,13 +1,13 @@
-require('dotenv').config();
-const express = require('express');
-const massive = require('massive');
-const session = require('express-session');
+require("dotenv").config();
+const express = require("express");
+const massive = require("massive");
+const session = require("express-session");
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
-const { register, login, logout } = require('./Controller/authCtrl');
+const { register, login, logout } = require("./Controller/authCtrl");
 
 const app = express();
-
+console.log(SERVER_PORT, CONNECTION_STRING, SESSION_SECRET);
 app.use(express.json());
 app.use(
   session({
@@ -24,23 +24,23 @@ massive({
   ssl: { rejectUnauthorized: false },
 })
   .then((dbInstance) => {
-    console.log('Database Connected');
-    app.set('db', dbInstance);
+    console.log("Database Connected");
+    app.set("db", dbInstance);
   })
-  .catch((err) => console.log(err, 'DB error'));
+  .catch((err) => console.log(err, "DB error"));
 
 //auth endpoints
 
-app.post('/api/register', register);
-app.post('/api/login', login);
-app.delete('/api/logout', logout);
+app.post("/api/register", register);
+app.post("/api/login", login);
+app.delete("/api/logout", logout);
 
 //const matchCtrl = require("./Controller/matchCtrl");
 //app.get("/api/getMatches", matchCtrl.getMatches);
 
-const { getAllProfiles } = require('./Controller/profileCtrl');
+const { getAllProfiles } = require("./Controller/profileCtrl");
 //app.put("/api/profile", profileCtrl.edit);
-app.get('/api/profiles', getAllProfiles);
+app.get("/api/profiles", getAllProfiles);
 
 app.listen(SERVER_PORT, () =>
   console.log(`Server running on Port ${SERVER_PORT}`)

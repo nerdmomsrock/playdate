@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function Home() {
   const [showText, setShowText] = useState(false);
   console.log(showText);
@@ -7,7 +6,9 @@ function Home() {
     <div className="Home">
       <br />
       <h1>Welcome To PlayDate!</h1>
-      <button onClick={() => setShowText(!showText)}>Click Here</button>
+      <button className="homeBtn" onClick={() => setShowText(!showText)}>
+        Click To Learn More
+      </button>
 
       {showText ? (
         <>
