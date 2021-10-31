@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { userMatches } from '../../ducks/matchReducer';
-import { connect } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { userMatches } from "../../ducks/matchReducer";
+import { connect } from "react-redux";
 
-import './bios.css';
+import "./bios.css";
 
 function Bios(props) {
   const [bios, setBios] = useState([]);
@@ -14,7 +14,7 @@ function Bios(props) {
       .then((response) => {
         setBios([...response.data]);
       })
-      .catch((err) => console.log(err, 'error in the axios call'));
+      .catch((err) => console.log(err, "error in the axios call"));
 
     // setMatches or setBios([...props.matches])
   }, []);
@@ -22,20 +22,21 @@ function Bios(props) {
   return (
     <div className="Bios">
       <h1>Bios</h1>
-      <p>Here</p>
+
       <div className="box">
         {bios.map((val) => {
           return (
             <div className="card">
               <ul>
                 <li>{val.first_name}</li>
-                <li>{val.email}</li>
+
                 <li>{val.your_kids}</li>
                 <li>{val.gender}</li>
                 <li>{val.favorite_food}</li>
                 <li>{val.embarrassing_moment}</li>
               </ul>
               <button
+                className="addBtn"
                 onClick={() => {
                   props.userMatches({
                     first_name: val.first_name,

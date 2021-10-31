@@ -17,7 +17,6 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 365 },
   })
 );
-//const {} = require("./Controller/matchController");
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -29,7 +28,7 @@ massive({
   })
   .catch((err) => console.log(err, "DB error"));
 
-//auth endpoints
+// //auth endpoints
 
 app.post("/api/register", register);
 app.post("/api/login", login);
@@ -46,14 +45,17 @@ app.listen(SERVER_PORT, () =>
   console.log(`Server running on Port ${SERVER_PORT}`)
 );
 
-// app.get("/api/login", userLogin);
+// //
+// // app.get("/api/login", userLogin);
 
-// app.post("/api/create", createAccount);
+// // app.post("/api/create", createAccount);
 
-// app.put("/api/profile", editProfile);
+// // app.put("/api/profile", editProfile);
 
-// app.put("/api/matches/:id", rejectMatch);
+// // app.put("/api/matches/:id", rejectMatch);
 
-// app.delete("/api/account/:id", deleteAccount);
+// // app.delete("/api/account/:id", deleteAccount);
 
-// app.get("/api/matches/:id", getMatches);
+// // app.get("/api/matches/:id", getMatches);
+
+//
